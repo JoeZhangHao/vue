@@ -319,19 +319,21 @@ Funds donated via Patreon go directly to support Evan You's full-time work on Vu
 <h2 align="center">Generous Backers via Patreon ($50+)</h2>
 
 <!--50 start-->
+
 - Wasim Khamlichi
-- errorrik 
+- errorrik
 - Alex Balashov
 - Konstantin Levinski
 - Evan Leonardi
 - Ernest Sim
 - Blaise Laflamme
-- Dilettant 
+- Dilettant
 <!--50 end-->
 
 <h2 align="center">Backers via Patreon</h2>
 
 <!--10 start-->
+
 - Luca Borghini
 - kazuya kawaguchi
 - Keisuke KITA
@@ -345,10 +347,10 @@ Funds donated via Patreon go directly to support Evan You's full-time work on Vu
 - Kirk Lewis
 - Karol F
 - Miljan Aleksic
-- 叶解 
+- 叶解
 - Jake Ingman
 - Barbara Liau
-- 4 
+- 4
 - Jarek Tkaczyk
 - David Hess
 - Niannian Modisette
@@ -358,7 +360,7 @@ Funds donated via Patreon go directly to support Evan You's full-time work on Vu
 - Mike Margerum
 - Guy Gavergun
 - Intevation GmbH
-- Luiz Eduardo  Tanure Bacelar
+- Luiz Eduardo Tanure Bacelar
 - Chengzhi Yin
 - Zoran Knezevic
 - Pierre Vanhulst
@@ -401,12 +403,12 @@ Funds donated via Patreon go directly to support Evan You's full-time work on Vu
 - Jere Sjöroos
 - Wakana Seki
 - David Ang
-- Dom 
+- Dom
 - Ben Hong
 - David Kaplan
 - John Cleveland
 - Jaeyoung Lee
-- Amor 
+- Amor
 - Tom Ootes
 - Andy Foster
 - Joe Cochran

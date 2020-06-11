@@ -25,6 +25,7 @@ Hi! I’m really excited that you are interested in contributing to Vue.js. Befo
 - Make sure `npm test` passes. (see [development setup](#development-setup))
 
 - If adding new feature:
+
   - Add accompanying test case.
   - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
 
@@ -39,7 +40,7 @@ You will need [Node.js](http://nodejs.org) **version 6+** and [Java Runtime Envi
 
 After cloning the repo, run:
 
-``` bash
+```bash
 $ npm install # or yarn
 ```
 
@@ -49,7 +50,7 @@ Commit messages should follow the [commit message convention](./COMMIT_CONVENTIO
 
 ### Commonly used NPM scripts
 
-``` bash
+```bash
 # watch and auto re-build dist/vue.js
 $ npm run dev
 
@@ -120,7 +121,6 @@ The default test script will do the following: lint with ESLint -> type check wi
   - **`types`**: contains TypeScript type definitions
 
     - **`test`**: type definitions tests
-
 
 ## Financial Contribution
 

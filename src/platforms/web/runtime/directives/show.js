@@ -27,7 +27,11 @@ export default {
 
   update (el: any, { value, oldValue }: VNodeDirective, vnode: VNodeWithData) {
     /* istanbul ignore if */
+<<<<<<< HEAD
     if (!value === !oldValue) return
+=======
+    if (value === oldValue) return
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
     vnode = locateNode(vnode)
     const transition = vnode.data && vnode.data.transition
     if (transition) {

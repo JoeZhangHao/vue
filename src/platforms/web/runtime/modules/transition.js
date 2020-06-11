@@ -130,7 +130,11 @@ export function enter (vnode: VNodeWithData, toggleDisplay: ?() => void) {
 
   if (!vnode.data.show) {
     // remove pending leave element on enter by injecting an insert hook
+<<<<<<< HEAD
     mergeVNodeHook(vnode, 'insert', () => {
+=======
+    mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', () => {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
       const parent = el.parentNode
       const pendingNode = parent && parent._pending && parent._pending[vnode.key]
       if (pendingNode &&
@@ -149,6 +153,7 @@ export function enter (vnode: VNodeWithData, toggleDisplay: ?() => void) {
     addTransitionClass(el, startClass)
     addTransitionClass(el, activeClass)
     nextFrame(() => {
+<<<<<<< HEAD
       removeTransitionClass(el, startClass)
       if (!cb.cancelled) {
         addTransitionClass(el, toClass)
@@ -158,6 +163,15 @@ export function enter (vnode: VNodeWithData, toggleDisplay: ?() => void) {
           } else {
             whenTransitionEnds(el, type, cb)
           }
+=======
+      addTransitionClass(el, toClass)
+      removeTransitionClass(el, startClass)
+      if (!cb.cancelled && !userWantsControl) {
+        if (isValidDuration(explicitEnterDuration)) {
+          setTimeout(cb, explicitEnterDuration)
+        } else {
+          whenTransitionEnds(el, type, cb)
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
         }
       }
     })
@@ -183,12 +197,20 @@ export function leave (vnode: VNodeWithData, rm: Function) {
   }
 
   const data = resolveTransition(vnode.data.transition)
+<<<<<<< HEAD
   if (isUndef(data) || el.nodeType !== 1) {
+=======
+  if (isUndef(data)) {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
     return rm()
   }
 
   /* istanbul ignore if */
+<<<<<<< HEAD
   if (isDef(el._leaveCb)) {
+=======
+  if (isDef(el._leaveCb) || el.nodeType !== 1) {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
     return
   }
 
@@ -251,7 +273,11 @@ export function leave (vnode: VNodeWithData, rm: Function) {
       return
     }
     // record leaving element
+<<<<<<< HEAD
     if (!vnode.data.show && el.parentNode) {
+=======
+    if (!vnode.data.show) {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
       (el.parentNode._pending || (el.parentNode._pending = {}))[(vnode.key: any)] = vnode
     }
     beforeLeave && beforeLeave(el)
@@ -259,6 +285,7 @@ export function leave (vnode: VNodeWithData, rm: Function) {
       addTransitionClass(el, leaveClass)
       addTransitionClass(el, leaveActiveClass)
       nextFrame(() => {
+<<<<<<< HEAD
         removeTransitionClass(el, leaveClass)
         if (!cb.cancelled) {
           addTransitionClass(el, leaveToClass)
@@ -268,6 +295,15 @@ export function leave (vnode: VNodeWithData, rm: Function) {
             } else {
               whenTransitionEnds(el, type, cb)
             }
+=======
+        addTransitionClass(el, leaveToClass)
+        removeTransitionClass(el, leaveClass)
+        if (!cb.cancelled && !userWantsControl) {
+          if (isValidDuration(explicitLeaveDuration)) {
+            setTimeout(cb, explicitLeaveDuration)
+          } else {
+            whenTransitionEnds(el, type, cb)
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
           }
         }
       })

@@ -3,12 +3,23 @@ import { Vue } from "./vue";
 // Scoped slots can technically return anything if used from
 // a render function, but this is "good enough" for templates
 export type ScopedSlot = (props: any) => ScopedSlotChildren;
-export type ScopedSlotChildren = ScopedSlotArrayContents | VNode | string | undefined;
+export type ScopedSlotChildren =
+  | ScopedSlotArrayContents
+  | VNode
+  | string
+  | undefined;
 export interface ScopedSlotArrayContents extends Array<ScopedSlotChildren> {}
 
 // Relaxed type compatible with $createElement
-export type VNodeChildren = VNodeChildrenArrayContents | [ScopedSlot] | string | boolean | null | undefined;
-export interface VNodeChildrenArrayContents extends Array<VNodeChildren | VNode> {}
+export type VNodeChildren =
+  | VNodeChildrenArrayContents
+  | [ScopedSlot]
+  | string
+  | boolean
+  | null
+  | undefined;
+export interface VNodeChildrenArrayContents
+  extends Array<VNodeChildren | VNode> {}
 
 export interface VNode {
   tag?: string;

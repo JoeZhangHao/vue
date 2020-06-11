@@ -1,6 +1,10 @@
 /* @flow */
 
+<<<<<<< HEAD
 import { isIE, isIE9, isEdge } from 'core/util/env'
+=======
+import { isIE9, isEdge } from 'core/util/env'
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
 
 import {
   extend,
@@ -44,7 +48,11 @@ function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   // #4391: in IE9, setting type can reset value for input[type=radio]
   // #6666: IE/Edge forces progress value down to 1 before setting a max
   /* istanbul ignore if */
+<<<<<<< HEAD
   if ((isIE || isEdge) && attrs.value !== oldAttrs.value) {
+=======
+  if ((isIE9 || isEdge) && attrs.value !== oldAttrs.value) {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
     setAttr(elm, 'value', attrs.value)
   }
   for (key in oldAttrs) {
@@ -59,9 +67,13 @@ function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {
 }
 
 function setAttr (el: Element, key: string, value: any) {
+<<<<<<< HEAD
   if (el.tagName.indexOf('-') > -1) {
     baseSetAttr(el, key, value)
   } else if (isBooleanAttr(key)) {
+=======
+  if (isBooleanAttr(key)) {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
     // set attribute for blank value
     // e.g. <option disabled>Select one</option>
     if (isFalsyAttrValue(value)) {
@@ -83,6 +95,7 @@ function setAttr (el: Element, key: string, value: any) {
       el.setAttributeNS(xlinkNS, key, value)
     }
   } else {
+<<<<<<< HEAD
     baseSetAttr(el, key, value)
   }
 }
@@ -109,6 +122,13 @@ function baseSetAttr (el, key, value) {
       el.__ieph = true /* IE placeholder patched */
     }
     el.setAttribute(key, value)
+=======
+    if (isFalsyAttrValue(value)) {
+      el.removeAttribute(key)
+    } else {
+      el.setAttribute(key, value)
+    }
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
   }
 }
 

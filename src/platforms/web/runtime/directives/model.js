@@ -5,8 +5,12 @@
 
 import { isTextInputType } from 'web/util/element'
 import { looseEqual, looseIndexOf } from 'shared/util'
+<<<<<<< HEAD
 import { mergeVNodeHook } from 'core/vdom/helpers/index'
 import { warn, isIE9, isIE, isEdge } from 'core/util/index'
+=======
+import { warn, isAndroid, isIE9, isIE, isEdge } from 'core/util/index'
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
 
 /* istanbul ignore if */
 if (isIE9) {
@@ -19,6 +23,7 @@ if (isIE9) {
   })
 }
 
+<<<<<<< HEAD
 const directive = {
   inserted (el, binding, vnode, oldVnode) {
     if (vnode.tag === 'select') {
@@ -30,17 +35,33 @@ const directive = {
       } else {
         setSelected(el, binding, vnode.context)
       }
+=======
+export default {
+  inserted (el, binding, vnode) {
+    if (vnode.tag === 'select') {
+      setSelected(el, binding, vnode.context)
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
       el._vOptions = [].map.call(el.options, getValue)
     } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
       el._vModifiers = binding.modifiers
       if (!binding.modifiers.lazy) {
+<<<<<<< HEAD
         el.addEventListener('compositionstart', onCompositionStart)
         el.addEventListener('compositionend', onCompositionEnd)
+=======
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
         // Safari < 10.2 & UIWebView doesn't fire compositionend when
         // switching focus before confirming composition choice
         // this also fixes the issue where some browsers e.g. iOS Chrome
         // fires "change" instead of "input" on autocomplete.
         el.addEventListener('change', onCompositionEnd)
+<<<<<<< HEAD
+=======
+        if (!isAndroid) {
+          el.addEventListener('compositionstart', onCompositionStart)
+          el.addEventListener('compositionend', onCompositionEnd)
+        }
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
         /* istanbul ignore if */
         if (isIE9) {
           el.vmodel = true
@@ -48,7 +69,10 @@ const directive = {
       }
     }
   },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
   componentUpdated (el, binding, vnode) {
     if (vnode.tag === 'select') {
       setSelected(el, binding, vnode.context)
@@ -143,5 +167,8 @@ function trigger (el, type) {
   e.initEvent(type, true, true)
   el.dispatchEvent(e)
 }
+<<<<<<< HEAD
 
 export default directive
+=======
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f

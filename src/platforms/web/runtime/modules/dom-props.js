@@ -56,12 +56,21 @@ type acceptValueElm = HTMLInputElement | HTMLSelectElement | HTMLOptionElement;
 function shouldUpdateValue (elm: acceptValueElm, checkVal: string): boolean {
   return (!elm.composing && (
     elm.tagName === 'OPTION' ||
+<<<<<<< HEAD
     isNotInFocusAndDirty(elm, checkVal) ||
     isDirtyWithModifiers(elm, checkVal)
   ))
 }
 
 function isNotInFocusAndDirty (elm: acceptValueElm, checkVal: string): boolean {
+=======
+    isDirty(elm, checkVal) ||
+    isInputChanged(elm, checkVal)
+  ))
+}
+
+function isDirty (elm: acceptValueElm, checkVal: string): boolean {
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
   // return true when textbox (.number and .trim) loses focus and its value is
   // not equal to the updated value
   let notInFocus = true
@@ -71,6 +80,7 @@ function isNotInFocusAndDirty (elm: acceptValueElm, checkVal: string): boolean {
   return notInFocus && elm.value !== checkVal
 }
 
+<<<<<<< HEAD
 function isDirtyWithModifiers (elm: any, newVal: string): boolean {
   const value = elm.value
   const modifiers = elm._vModifiers // injected by v-model runtime
@@ -85,6 +95,16 @@ function isDirtyWithModifiers (elm: any, newVal: string): boolean {
     if (modifiers.trim) {
       return value.trim() !== newVal.trim()
     }
+=======
+function isInputChanged (elm: any, newVal: string): boolean {
+  const value = elm.value
+  const modifiers = elm._vModifiers // injected by v-model runtime
+  if (isDef(modifiers) && modifiers.number) {
+    return toNumber(value) !== toNumber(newVal)
+  }
+  if (isDef(modifiers) && modifiers.trim) {
+    return value.trim() !== newVal.trim()
+>>>>>>> 0948d999f2fddf9f90991956493f976273c5da1f
   }
   return value !== newVal
 }
